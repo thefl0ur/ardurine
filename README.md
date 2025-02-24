@@ -10,7 +10,7 @@ This project uses 220 volts. Be smart and follow safety rules. It's not producti
 It's not even guaranteed to work after all – currently, there is no hardware available to validate it.
 
 ### How it works
-Controlled via relay attached to Arduino, lamp goes on and off at speciefic time to simulate sunrise and sunset.
+Controlled via relay attached to Arduino, lamp goes on and off at specific time to simulate sunrise and sunset.
 
 Every midnight, the `setupTodayAlarms` event fires, fills the `sunrise` and `sunset` variables with corresponding values, and attaches single-use alarms to turn the lamp on or off.
 
@@ -29,11 +29,15 @@ Sunrise data is powered by [SunriseSunset.io](https://sunrisesunset.io/)
 
 ### Hardware
 
+Approximate diagram
+
+![diagram of wiring board](schematic.png)
+
 For wiring see source code.
 
 * Ardunio (Uno)
 * DS1307-based RTC
-* HC-05 for blueooth
+* HC-05 for Bluetooth
 * Push button
 * Relay module
 
@@ -58,5 +62,4 @@ List of commands:
 * `status` – prints the current status of the lamp, mostly for debugging
 * `time` – prints the current time in `YYYY-MM-DDTHH:MM:SS` format
 * `alarms` – prints two lines with the scheduled on and off alarm times
-
 
